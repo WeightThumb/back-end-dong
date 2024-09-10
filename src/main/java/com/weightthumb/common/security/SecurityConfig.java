@@ -69,4 +69,5 @@ public class SecurityConfig {
         registrationBean.addUrlPatterns("/api/*");
         return registrationBean;
     }
+
 }
