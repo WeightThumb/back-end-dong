@@ -1,5 +1,7 @@
 package com.weightthumb.common.config;
 
+import com.weightthumb.service.login.client.model.MemberDto;
+import io.swagger.v3.core.converter.ModelConverters;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
@@ -46,6 +48,8 @@ public class SwaggerConfig {
                     .addSchemas("KakaoLoginParams", new Schema<>().$ref("#/components/schemas/KakaoLoginParams"))
                     .addSchemas("AuthTokens", new Schema<>().$ref("#/components/schemas/AuthTokens"))
                     .addSchemas("Member", new Schema<>().$ref("#/components/schemas/Member"))
+                    //.addSchemas("MemberDto", new Schema<>().$ref("#/components/schemas/MemberDto"))
+                    .addSchemas("MemberDto",ModelConverters.getInstance().readAllAsResolvedSchema(MemberDto.class).schema)
             );
             openApi.getPaths().entrySet().stream()
                     .sorted(Map.Entry.comparingByKey())  // Sort by path (key)

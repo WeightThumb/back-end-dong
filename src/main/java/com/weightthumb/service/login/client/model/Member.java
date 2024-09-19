@@ -28,8 +28,11 @@ public class Member implements UserDetails {
     private String nickname;
     private String sex;
     private String age;
+    private Integer height;
+    private String activityLevel;
     private Double weight;
     private Double goalWeight;
+    private Integer goalCalorie;
     private String diet;
     private String profile;
     private String birthday;
@@ -74,17 +77,19 @@ public class Member implements UserDetails {
     }
 
     @Builder
-    public Member(Long id, String email, String nickname, String sex, String age,
-                  Double weight, Double goalWeight, String diet, String profile,
-                  String birthday, OAuthProvider oauthProvider, Timestamp createdAt,
-                  Timestamp updatedAt) {
+    public Member(Long id, String email, String nickname, String sex, String age, Integer height,
+                  String activityLevel, Double weight, Double goalWeight, Integer goalCalorie, String diet
+                , String profile, String birthday, OAuthProvider oauthProvider, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.email = email;
         this.nickname = nickname;
         this.sex = sex;
         this.age = age;
+        this.height = height;
+        this.activityLevel = activityLevel;
         this.weight = weight;
         this.goalWeight = goalWeight;
+        this.goalCalorie = goalCalorie;
         this.diet = diet;
         this.profile = profile;
         this.birthday = birthday;
