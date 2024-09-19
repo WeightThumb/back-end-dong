@@ -11,6 +11,8 @@ import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Map;
+
 @Configuration
 public class SwaggerConfig {
 
@@ -45,6 +47,9 @@ public class SwaggerConfig {
                     .addSchemas("AuthTokens", new Schema<>().$ref("#/components/schemas/AuthTokens"))
                     .addSchemas("Member", new Schema<>().$ref("#/components/schemas/Member"))
             );
+            openApi.getPaths().entrySet().stream()
+                    .sorted(Map.Entry.comparingByKey())  // Sort by path (key)
+                    .forEachOrdered(e -> openApi.getPaths().addPathItem(e.getKey(), e.getValue()));
         };
     }
 }
