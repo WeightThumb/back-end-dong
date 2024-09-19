@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j
-@RestControllerAdvice("com.weightthumb.service.login.client.model")
+@RestControllerAdvice()
 public class ControllerAdvice {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
