@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://localhost:3306/health
+    url: jdbc:mariadb://223.130.134.140:3306/health
+    username: root
+    password: dong
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        time_zone: Asia/Seoul
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      force-response: true
+  address: 0.0.0.0
+
+oauth:
+  kakao:
+    client-id: b8da5111ad5fb989de71ae153b1bb0c9
+    url:
+      auth: https://kauth.kakao.com
+      api: https://kapi.kakao.com
+
+jwt:
+  secret-key: GaXmsBiD6L1Z2M3NorAExZp8gr3uPXDR6J6iZxe4pfYKTf0SV1+I0xGqmuPG+nmLVCl9/2+lYB/VFI+AgoFGpg==
