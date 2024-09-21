@@ -97,4 +97,15 @@ public class Member implements UserDetails {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+
+    public void change(MemberDto memberDto) {
+        this.sex = memberDto.getSex();
+        this.age = memberDto.getAge();
+        this.height = memberDto.getHeight();
+        this.activityLevel = memberDto.getActivityLevel();
+        this.weight = memberDto.getWeight();
+        this.goalWeight = memberDto.getGoalWeight();
+        this.goalCalorie = memberDto.getGoalCalorie();
+        this.diet = memberDto.getDiet();
+    }
 }
