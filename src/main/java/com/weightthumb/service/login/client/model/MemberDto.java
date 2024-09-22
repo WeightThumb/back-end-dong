@@ -4,11 +4,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import lombok.Builder;
 import lombok.Getter;
 import org.hibernate.validator.constraints.Range;
 
 @Getter
 @Schema(description = "사용자 정보 DTO")
+@Builder
 public class MemberDto {
 
     @Schema(description = "성별", example = "male|female")
